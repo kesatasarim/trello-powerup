@@ -3,15 +3,15 @@
   "name": "Zaman Takip Power-Up",
   "description": "Trello kartları için zaman takip eklentisi",
   "author": "Senin İsmin",
-  "icon": "https://unpkg.com/matrikstimer38@1.0.0/timer.png",
+  "icon": "https://trello-powerup-eight.vercel.app/timer.png",
   "capabilities": {
     "card-buttons": {
-      "url": "https://unpkg.com/matrikstimer38@1.0.0/powerup.js"
+      "url": "https://trello-powerup-eight.vercel.app/powerup.js"
     }
   },
   "connectors": {
     "iframe": {
-      "url": "https://unpkg.com/matrikstimer38@1.0.0/timer.html"
+      "url": "https://trello-powerup-eight.vercel.app/timer.html"
     }
   }
 }
