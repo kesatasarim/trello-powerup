@@ -1,0 +1,17 @@
+{
+  "manifest_version": 1,
+  "name": "Zaman Takip Power-Up",
+  "description": "Trello kartları için zaman takip eklentisi",
+  "author": "Senin İsmin",
+  "icon": "https://unpkg.com/matrikstimer38@1.0.0/timer.png",
+  "capabilities": {
+    "card-buttons": {
+      "url": "https://unpkg.com/matrikstimer38@1.0.0/powerup.js"
+    }
+  },
+  "connectors": {
+    "iframe": {
+      "url": "https://unpkg.com/matrikstimer38@1.0.0/timer.html"
+    }
+  }
+}

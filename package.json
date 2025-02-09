@@ -1,0 +1,14 @@
+{
+  "name": "trello-powerup",
+  "version": "1.0.0",
+  "description": "Trello zaman takip Power-Up'ı",
+  "main": "powerup.js",
+  "files": [
+    "manifest.json",
+    "powerup.js",
+    "timer.html",
+    "timer.png"
+  ],
+  "author": "Senin İsmin",
+  "license": "MIT"
+}

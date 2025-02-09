@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaman Takip Ekranı</title>
+    <script src="https://p.trellocdn.com/power-up.min.js"></script>
+</head>
+<body>
+    <h2>Zaman Takibi</h2>
+    <button id="start">Başlat</button>
+    <button id="stop">Durdur</button>
+    <p id="elapsed-time">Geçen Süre: 0 dakika</p>
+
+    <script>
+        var t = window.TrelloPowerUp.iframe();
+        let startTime = null;
+        let totalTime = 0;
+
+        // Zamanı başlat
+        document.getElementById("start").addEventListener("click", function() {
+            startTime = new Date().getTime();
+            alert("Zaman takibi başladı!");
+        });
+
+        // Zamanı durdur ve Trello'ya kaydet
+        document.getElementById("stop").addEventListener("click", function() {
+            if (!startTime) {
+                alert("Önce zamanı başlatın!");
+                return;
+            }
+            let endTime = new Date().getTime();
+            let elapsedMinutes = Math.round((endTime - startTime) / 60000);
+            totalTime += elapsedMinutes;
+            startTime = null;
+            
+            document.getElementById("elapsed-time").innerText = "Geçen Süre: " + totalTime + " dakika";
+
+            // Trello kartına süreyi kaydet
+            t.set("card", "shared", "elapsedTime", totalTime).then(function() {
+                alert("Süre kaydedildi: " + totalTime + " dakika");
+            });
+        });
+
+        // Daha önce kaydedilen süreyi al
+        t.get("card", "shared", "elapsedTime").then(function(savedTime) {
+            if (savedTime) {
+                totalTime = savedTime;
+                document.getElementById("elapsed-time").innerText = "Geçen Süre: " + totalTime + " dakika";
+            }
+        });
+    </script>
+</body>
+</html>
